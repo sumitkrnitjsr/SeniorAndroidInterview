@@ -3,10 +3,10 @@ package com.interviewprep.seniorandroiddev.presenter
 interface  BreedListContract {
 
     interface ListPresenter {
-        fun attributesSelected(attributes: BreedAttributes)
+         fun attributesSelected(attributes: BreedAttributes)
     }
 
     interface ListView {
-        fun showSelectedBreed(breed: Breed)
+         fun showSelectedBreed(breed: Breed)
     }
 }

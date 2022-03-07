@@ -18,10 +18,10 @@ class BreedSelectorTest {
     @Test
     fun whenAttributesSelected_shouldShowCorrectBreed() {
         val attributes = BreedAttributes(
-            maxTemperature = 50,
-            monthlyBudgetUSD = 70,
+            maxTemperature = "50",
+            monthlyBudgetUSD = "70",
             purpose = "GUARD",
-            dailyTimeMin = 45
+            dailyTimeMin = "45"
         )
 
         val expectedBreed = Breed(attributes, "Indian Pariah")
