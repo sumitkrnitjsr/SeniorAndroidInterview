@@ -1,4 +1,4 @@
-package com.interviewprep.seniorandroiddev
+package com.interviewprep.seniorandroiddev.mvp
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -20,10 +20,10 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.lifecycleScope
-import com.interviewprep.seniorandroiddev.model.Breed
-import com.interviewprep.seniorandroiddev.model.BreedAttributes
-import com.interviewprep.seniorandroiddev.presenter.BreedListContract
-import com.interviewprep.seniorandroiddev.presenter.BreedPresenter
+import com.interviewprep.seniorandroiddev.mvp.model.Breed
+import com.interviewprep.seniorandroiddev.mvp.model.BreedAttributes
+import com.interviewprep.seniorandroiddev.mvp.presenter.BreedListContract
+import com.interviewprep.seniorandroiddev.mvp.presenter.BreedPresenter
 import com.interviewprep.seniorandroiddev.ui.theme.SeniorAndroidDevInterviewPrepTheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.coroutineScope
@@ -35,7 +35,15 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalMaterialApi::class)
 class MainActivity : ComponentActivity(), BreedListContract.ListView{
 
+    companion object{
+        val map: HashMap<String, List<String>?> = hashMapOf("Maximum Temperature" to listOf("10", "25", "50"),
+            "Monthly Budget In USD" to listOf("35", "70", "100"),
+            "Purpose" to listOf("GUARD", "FAMILY"),
+            "Minimum Daily Time(In Minutes)" to listOf("45", "90", "120"))
+    }
+
     private val presenter = BreedPresenter()
+
     var saveMap = hashMapOf<String, String>("Maximum Temperature" to "50",
         "Monthly Budget In USD" to "35",
         "Purpose" to "GUARD",
@@ -48,10 +56,6 @@ class MainActivity : ComponentActivity(), BreedListContract.ListView{
         setContent {
             SeniorAndroidDevInterviewPrepTheme {
                 Surface{
-                    val map: HashMap<String, List<String>?> = hashMapOf("Maximum Temperature" to listOf("10", "25", "50"),
-                        "Monthly Budget In USD" to listOf("35", "70", "100"),
-                        "Purpose" to listOf("GUARD", "FAMILY"),
-                        "Minimum Daily Time(In Minutes)" to listOf("45", "90", "120"))
                     var text by rememberSaveable { mutableStateOf("Selected Breed : The Selection will appear here")}
                     Column(horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Center,
@@ -77,7 +81,6 @@ class MainActivity : ComponentActivity(), BreedListContract.ListView{
                             text = text,
                             color = Color.Magenta,
                             modifier = Modifier.padding(16.dp),
-
                         )
                     }
                 }

@@ -1,4 +1,4 @@
-package com.interviewprep.seniorandroiddev.model
+package com.interviewprep.seniorandroiddev.mvp.model
 
 data class BreedAttributes(
     val maxTemperature: String? = "50",

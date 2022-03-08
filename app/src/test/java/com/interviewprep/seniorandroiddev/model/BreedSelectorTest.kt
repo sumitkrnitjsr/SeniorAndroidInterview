@@ -1,6 +1,9 @@
 package com.interviewprep.seniorandroiddev.model
 
 import com.google.common.truth.Truth.assertThat
+import com.interviewprep.seniorandroiddev.mvp.model.Breed
+import com.interviewprep.seniorandroiddev.mvp.model.BreedAttributes
+import com.interviewprep.seniorandroiddev.mvp.model.BreedSelector
 import org.junit.Before
 import org.junit.Test
 

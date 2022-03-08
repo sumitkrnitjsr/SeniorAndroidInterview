@@ -1,4 +1,4 @@
-package com.interviewprep.seniorandroiddev.model
+package com.interviewprep.seniorandroiddev.mvp.model
 
 import androidx.annotation.NonNull
 import androidx.room.Embedded

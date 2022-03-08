@@ -1,12 +1,10 @@
-package com.interviewprep.seniorandroiddev
+package com.interviewprep.seniorandroiddev.mvp
 
 import android.app.Application
-import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
-import androidx.room.RoomDatabase
-import com.interviewprep.seniorandroiddev.model.Breed
-import com.interviewprep.seniorandroiddev.model.BreedAttributes
-import com.interviewprep.seniorandroiddev.model.room.BreedDatabase
+import com.interviewprep.seniorandroiddev.mvp.model.Breed
+import com.interviewprep.seniorandroiddev.mvp.model.BreedAttributes
+import com.interviewprep.seniorandroiddev.mvp.model.room.BreedDatabase
 import kotlinx.coroutines.*
 
 class BaseApplication: Application() {
@@ -18,10 +16,11 @@ class BaseApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         database = Room.databaseBuilder(this, BreedDatabase::class.java, "breed_database").build()
-        Companion.applicationScope.launch {
+        applicationScope.launch {
             database.breedDao().insert(Breed(BreedAttributes()))
             database.breedDao().insert(Breed(BreedAttributes(purpose = "FAMILY"), "Labarador"))
         }
 
     }
+
 }

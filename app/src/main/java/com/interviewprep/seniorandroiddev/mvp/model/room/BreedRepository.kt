@@ -1,13 +1,11 @@
-package com.interviewprep.seniorandroiddev.model.room
+package com.interviewprep.seniorandroiddev.mvp.model.room
 
-import com.interviewprep.seniorandroiddev.BaseApplication
-import com.interviewprep.seniorandroiddev.model.Breed
-import com.interviewprep.seniorandroiddev.model.SearchRepository
+import com.interviewprep.seniorandroiddev.mvp.BaseApplication
+import com.interviewprep.seniorandroiddev.mvp.model.Breed
+import com.interviewprep.seniorandroiddev.mvp.model.SearchRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.NonCancellable
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.withContext
 
 class BreedRepository: SearchRepository {

@@ -1,8 +1,8 @@
-package com.interviewprep.seniorandroiddev.model.room
+package com.interviewprep.seniorandroiddev.mvp.model.room
 
 import androidx.room.*
-import com.interviewprep.seniorandroiddev.model.Breed
-import com.interviewprep.seniorandroiddev.model.BreedAttributes
+import com.interviewprep.seniorandroiddev.mvp.model.Breed
+import com.interviewprep.seniorandroiddev.mvp.model.BreedAttributes
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 

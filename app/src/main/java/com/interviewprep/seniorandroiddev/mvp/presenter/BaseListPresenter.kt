@@ -1,4 +1,4 @@
-package com.interviewprep.seniorandroiddev.presenter
+package com.interviewprep.seniorandroiddev.mvp.presenter
 
 import java.lang.ref.WeakReference
 

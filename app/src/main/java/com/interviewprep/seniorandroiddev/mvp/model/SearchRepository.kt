@@ -1,4 +1,4 @@
-package com.interviewprep.seniorandroiddev.model
+package com.interviewprep.seniorandroiddev.mvp.model
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

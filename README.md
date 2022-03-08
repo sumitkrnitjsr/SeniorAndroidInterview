@@ -12,6 +12,8 @@ MVP :
         Controller determines which view to display
         All views(Activity/Fragment) share same controller
         View delegates all actions to controller
+        Controller : Receive interaction from view, update model, propagate to view
+
     Problem - 2 with MVC : SoC in controller(Business Logic + View Logic)
 
     Solution - 2 : MVP
@@ -24,6 +26,22 @@ MVP :
 ![img_1.png](img_1.png)
 
 ![img_2.png](img_2.png)
+
+Step-by-Step Process for MVP : 
+    -> Create Model classes for data storage
+    -> Use TDD to Test Models 
+        -> Create a variable of model that doesn't exist, write methods on objects for expected behavior
+    -> Create interface for repository to easily switch and test later
+    -> Create contract interface between presenter and view 
+        ->Create an interface for each activity with nested interface for both presenter and view
+    -> Create a BasePresenter with a WeakReference to View
+    -> Create concrete presenters extending BasePresenter
+    -> Save temporary data into presenter
+    -> Unit Test presenter logic using Mockito
+    -> Connect presenter and repository
+    
+
+
 
 
 
