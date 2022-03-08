@@ -7,6 +7,6 @@ abstract class BaseListPresenter<V> {
 
     protected fun getView() = view?.get()
 
-    protected fun setView(view: V) = { this.view = WeakReference(view) }
+    fun setView(view: V) = { this.view = WeakReference(view) }
 
 }

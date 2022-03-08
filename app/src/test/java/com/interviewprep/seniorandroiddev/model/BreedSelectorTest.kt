@@ -1,6 +1,6 @@
 package com.interviewprep.seniorandroiddev.model
 
-import com.google.common.truth.Truth8.assertThat
+import com.google.common.truth.Truth.assertThat
 import org.junit.Before
 import org.junit.Test
 
@@ -16,10 +16,10 @@ class BreedSelectorTest {
 
 
     @Test
-    fun whenAttributesSelected_shouldShowCorrectBreed() {
+    fun whenGivenAttributes_shouldReturnCorrectBreed() {
         val attributes = BreedAttributes(
             maxTemperature = "50",
-            monthlyBudgetUSD = "70",
+            monthlyBudgetUSD = "35",
             purpose = "GUARD",
             dailyTimeMin = "45"
         )
